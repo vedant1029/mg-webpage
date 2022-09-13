@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.configTitle{
+    font-size: var(--f18);
+}
+
+.configStatus{
+
+}
+
+.videoOverlay{
+   margin: 2rem 0;
+   /* width: 50rem; */
+}
+
+.videoOverlay video {
+    
+}
+
+.downloadButton {
+  color: var(--white);
+  width: 20rem;
+  height: 5rem;
+  background: #000000;
+  border: 1px solid #4e5868;
+  text-decoration: none;
+  padding: 1rem 4rem;
+  border-radius: 10px;
+  cursor: pointer;
+}

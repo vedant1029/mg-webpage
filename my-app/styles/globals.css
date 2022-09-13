@@ -1,0 +1,195 @@
+@font-face {
+  font-family: Gill Sans MT;
+  src: url("/fonts/gillSans/GIL_____.TTF")
+  , url("/fonts/gillSans/GILB____.TTF")
+  , url("/fonts/gillSans/GILBI___.TTF")
+  , url("/fonts/gillSans/GILC____.TTF")
+  , url("/fonts/gillSans/GILI____.TTF")
+  , url("/fonts/gillSans/GILLUBCD.TTF")
+  , url("/fonts/gillSans/GILSANUB.TTF");
+}
+
+:root {
+
+  font-family: Gill Sans MT;
+
+  /* font sizes */
+  --f8: 0.8rem;
+  --f12: 1.2rem;
+  --f14: 1.4rem;
+  --f16: 1.6rem;  
+  --f18: 1.8rem;
+  --f28: 2.8rem;
+  --f32: 3.2rem;
+  --f56: 5.6rem;
+
+  /* font weights */
+  /* light */
+  --fwl: 400;
+  /* medium */
+  --fwm: 500;
+
+  --fwb: 600;
+
+  /* colors */
+  --red: #DF3B3B;
+  --dark-red: #57100B;
+  --white: #EDEDED;
+  --black: #111010;
+  --grey: #282828;
+  --dark-grey:#1D1C1C;
+  --graphite:#848484;
+
+  /* border-radius */
+  --br1: 0.1rem;
+
+  /* layers */
+  --layer0: 0; /*by default*/
+  --layer1: 1;
+
+  /* //for overlay */
+  --layer2: 2;
+
+
+  /*paddings*/
+  --ps: 0.2rem;
+  --p0: 0.5rem;
+  --p1: 1rem;
+  --p2: 2rem;
+
+}
+
+html {
+    font-size: 10px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.v-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+}
+.to-left {
+  display: flex;
+  align-items: center;
+}
+.to-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.to-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.to-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.to-left-top {
+  display: flex;
+}
+.to-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.space-around {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+}
+.space-between {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.space-between-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.space-around-col {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+.v-flex-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+.cover-whole-screen{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.margin1 {
+  margin: 1rem 2rem;
+}
+.margin2 {
+  margin: 2rem 4rem;
+}
+.marginr1 {
+  margin: 0 1rem;
+}
+.marginr2 {
+  margin: 0 2rem;
+}
+.marginr3 {
+  margin: 0 3rem;
+}
+.marginv1 {
+  margin: 1rem 0rem;
+}
+.marginv0 {
+  margin: 0.5rem 0rem;
+}
+.paddingr0 {
+  padding: 0 1rem;
+}
+.b-r-1 {
+  border-right: 1px solid var(--bd-oxford-blue);
+}
+.hide {
+  display: none !important;
+}
+.capture-width {
+  width: 100%;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
