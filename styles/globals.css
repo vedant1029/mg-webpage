@@ -63,6 +63,10 @@ html {
     font-size: 10px;
 }
 
+body{
+  margin: 0;
+}
+
 .center {
   display: flex;
   align-items: center;
@@ -158,8 +162,8 @@ html {
 .marginr2 {
   margin: 0 2rem;
 }
-.marginr3 {
-  margin: 0 3rem;
+.marginr5 {
+  margin: 0 30rem;
 }
 .marginv1 {
   margin: 1rem 0rem;
@@ -192,4 +196,8 @@ a {
   box-sizing: border-box;
 }
 
-
+@media (max-width: 600px) {
+  html{
+    font-size: 8px;
+  }
+}
