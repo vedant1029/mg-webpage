@@ -1,15 +1,17 @@
-import styles from './index.module.css'
-import {useState} from 'react';
+import styles from './index.module.css';
+import { useState } from 'react';
+import dynamic from "next/dynamic";
+const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
 interface InProps {
     index: Number;
-    videoSource : string;
+    videoSource: string;
 }
 
 const Card = (props: InProps) => {
-    let [clicked,setClicked] = useState(false);
+    let [clicked, setClicked] = useState(false);
 
-    const handleMouseDown = () =>{
+    const handleMouseDown = () => {
         setClicked(true);
     }
 
@@ -20,17 +22,21 @@ const Card = (props: InProps) => {
     return (
         <div className={styles.container}>
             <div className='space-between'>
-                <span className={styles.configTitle}>{'Car Configuration ' + props.index }</span>
+                <span className={styles.configTitle}>{'Car Configuration ' + props.index}</span>
                 <span className={styles.configStatus}>Edited 7 hours ago</span>
             </div>
-            <div className={styles.videoOverlay}>
-                <video controls>
-                    <source src={props.videoSource} />
-                    <p>Your browser does not support HTML5 video. Here is a <a href={props.videoSource}>link to the video</a> instead.</p>
-                </video>
+            <div className={styles.playerWrapper}>
+                <ReactPlayer
+                    className={styles.reactPlayer}
+                    url='/videos/sample.mp4'
+                    controls={true}
+                    width='52rem'
+                    height='30rem'
+                    light='/images/thumbnail.svg'
+                />
             </div>
             <div onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} className={styles.downloadButton + ' cursor-pointer'}>
-                {clicked ?<img src='/images/downloadButtonOnclick.svg' /> : <img src='/images/downloadButtonDefault.svg' />}
+                {clicked ? <img src='/images/downloadButtonOnclick.svg' /> : <img src='/images/downloadButtonDefault.svg' />}
             </div>
         </div>
     )

@@ -14,13 +14,13 @@
   color: #4d4d4d;
 }
 
-.videoOverlay {
+/* maintaining aspect ratio  */
+/* .videoOverlay {
   margin: 1.6rem 0;
   width: 46rem;
   padding-top: 56.25%;
   height: 0px;
   position: relative;
-  /* width: 50rem; */
 }
 
 .videoOverlay video {
@@ -29,6 +29,16 @@
   position: absolute;
   top: 0;
   left: 0;
+} */
+
+.playerWrapper {
+}
+
+.reactPlayer {
+  margin: 1.6rem 0;
+  /* position: absolute;
+  top: 0;
+  left: 0; */
 }
 
 .downloadButton img{
