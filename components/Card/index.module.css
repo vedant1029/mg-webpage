@@ -36,9 +36,10 @@
 
 .reactPlayer {
   margin: 1.6rem 0;
-  /* position: absolute;
-  top: 0;
-  left: 0; */
+}
+
+.playIcon{
+  font-size: 7rem;
 }
 
 .downloadButton img{

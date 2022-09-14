@@ -1,7 +1,9 @@
 import styles from './index.module.css';
 import { useState } from 'react';
+
 import dynamic from "next/dynamic";
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
+import {AiFillPlayCircle} from "react-icons/ai";
 
 interface InProps {
     index: Number;
@@ -33,6 +35,7 @@ const Card = (props: InProps) => {
                     width='52rem'
                     height='30rem'
                     light='/images/thumbnail.svg'
+                    playIcon={<AiFillPlayCircle className={styles.playIcon}></AiFillPlayCircle>}
                 />
             </div>
             <div onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} className={styles.downloadButton + ' cursor-pointer'}>
