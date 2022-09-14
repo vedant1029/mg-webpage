@@ -6,15 +6,16 @@
 }
 
 .configTitle {
-  font-size: var(--f18);
+  font-size: 2.2rem;
 }
 
 .configStatus {
-  color: #4D4D4D;
+  font-size: var(--f18);
+  color: #4d4d4d;
 }
 
 .videoOverlay {
-  margin: 2rem 0;
+  margin: 1.6rem 0;
   width: 46rem;
   padding-top: 56.25%;
   height: 0px;
@@ -30,14 +31,22 @@
   left: 0;
 }
 
-.downloadButton {
+.downloadButton img{
+  /* font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
   color: var(--white);
-  width: 20rem;
+  width: 24rem;
   height: 5rem;
-  background: #000000;
+  background: linear-gradient(180deg, #161B25 0%, #2C303A 100%), #000000;
   border: 1px solid #4e5868;
   text-decoration: none;
   padding: 1rem 4rem;
-  border-radius: 10px;
   cursor: pointer;
+
+  position: relative; */
+  width: 24rem;
+  height: auto;
 }

@@ -6,3 +6,8 @@
     width: 16rem;
 }
 
+@media (max-width: 600px) {
+    .container{
+        margin-right: 0;
+    }
+}

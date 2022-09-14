@@ -1,13 +1,14 @@
 import styles from "./index.module.css";
+import {UserDataType} from '../../constants/UserDataType'
 
-interface InProps {
-  // userInfoCategory: string;
-  name: string;
-  email: string;
-  contact: string;
-}
+// interface InProps {
+//   // userInfoCategory: string;
+//   name: string;
+//   email: string;
+//   contact: string;
+// }
 
-const UserDetails = (props: InProps) => {
+const UserDetails = (props: UserDataType) => {
   return (
     <div className={styles.container}>
       <div className={styles.userInfoCategory}>

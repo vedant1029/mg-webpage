@@ -19,7 +19,7 @@
   --f14: 1.4rem;
   --f16: 1.6rem;  
   --f18: 1.8rem;
-  --f28: 2.8rem;
+  --f24: 2.4rem;
   --f32: 3.2rem;
   --f56: 5.6rem;
 
@@ -199,5 +199,11 @@ a {
 @media (max-width: 600px) {
   html{
     font-size: 8px;
+  }
+}
+
+@media (max-width: 1000px) {
+  html{
+    font-size: 9px;
   }
 }

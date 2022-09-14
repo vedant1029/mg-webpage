@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
@@ -8,11 +9,29 @@ import UserDetails from "../components/UserDetails/UserDetails";
 import Avatar from "../components/Avatar/Avatar";
 import Card from "../components/Card/Card";
 
+import { UserDataType } from "../constants/UserDataType";
+
 const Home: NextPage = () => {
-  const data = {
+  // let [userData, setUserData] = useState<UserDataType | null>(null);
+
+  // const api = "";
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const data = await fetch(api, {
+  //       method: "GET"
+  //     });
+  //     const jsonData = await data.json();
+  //     setUserData(jsonData.data);
+  //   };
+
+  //   fetchData();
+  // }, [])
+
+  const userData: UserDataType = {
     name: "John",
-    email: "sadsada",
-    contact: "sadas",
+    email: "jonathan@example.com",
+    contact: "7999927777",
+    configurationVideos: ['a', 'b', 'c', 'd']
   };
 
   return (
@@ -27,18 +46,15 @@ const Home: NextPage = () => {
         <Header />
         <div className="marginr5">
           <div className={styles.profile}>
-            <Avatar />
+            <Avatar imageSource={""} />
             {/* <UserDetails userInfoCategory={'Name'} userInfo={'Johnathan asda Buyers'} />
             <UserDetails userInfoCategory={'Email'} userInfo={'Johnathan sad Buyers'} />
             <UserDetails userInfoCategory={'Contact'} userInfo={'Johnathan sasaasdas Buyers'} /> */}
-            <UserDetails {...data} />
+            <UserDetails {...userData} />
           </div>
-          <h1>Your Configurations</h1>
+          <p className={styles.title}>Your Configurations</p>
           <div className={styles.grid}>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {userData.configurationVideos.map((element, index) => <Card key={index} videoSource={element} index={index + 1} />)}
           </div>
         </div>
       </main>
