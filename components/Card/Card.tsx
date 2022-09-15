@@ -12,6 +12,8 @@ interface InProps {
 
 const Card = (props: InProps) => {
     let [clicked, setClicked] = useState(false);
+    let [showModelThumbnail, setShowModelThumbnail] = useState(true);
+    let [startPlaying, setStartPlaying] = useState(false);
 
     const handleMouseDown = () => {
         setClicked(true);
@@ -19,6 +21,11 @@ const Card = (props: InProps) => {
 
     const handleMouseUp = () => {
         setClicked(false);
+    }
+
+    const handleClickPreview = () => {
+        setShowModelThumbnail(false);
+        setStartPlaying(true);
     }
 
     return (
@@ -36,11 +43,16 @@ const Card = (props: InProps) => {
                     height='30rem'
                     light='/images/thumbnail.svg'
                     playIcon={<AiFillPlayCircle className={styles.playIcon}></AiFillPlayCircle>}
+                    onClickPreview={handleClickPreview}
+                    playing={startPlaying}
                 />
+                {showModelThumbnail && <span className={styles.modelThumbnail}> <img src='/images/hectorPlus.svg'></img> </span>} 
             </div>
             <div onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} className={styles.downloadButton + ' cursor-pointer'}>
-                {clicked ? <img src='/images/downloadButtonOnclick.svg' /> : <img src='/images/downloadButtonDefault.svg' />}
+                {clicked ? <img draggable={false} src='/images/downloadButtonOnclick.svg' /> : <img draggable={false} src='/images/downloadButtonDefault.svg' />}
             </div>
+
+            {/* <button onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} className={clicked?styles.octagon:'octagonClicked'}>Download Brochure</button> */}
         </div>
     )
 }
