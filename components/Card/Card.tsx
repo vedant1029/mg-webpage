@@ -48,8 +48,8 @@ const Card = (props: InProps) => {
                 />
                 {showModelThumbnail && <span className={styles.modelThumbnail}> <img src='/images/hectorPlus.svg'></img> </span>} 
             </div>
-            <div onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} className={styles.downloadButton + ' cursor-pointer'}>
-                {clicked ? <img draggable={false} src='/images/downloadButtonOnclick.svg' /> : <img draggable={false} src='/images/downloadButtonDefault.svg' />}
+            <div onMouseLeave={handleMouseUp} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} className={styles.downloadButton + ' cursor-pointer'}>
+                <a href='/images/avatar.svg' download='avatar'>{clicked ? <img draggable={false} src='/images/downloadButtonOnclick.svg' /> : <img draggable={false} src='/images/downloadButtonDefault.svg' />}</a>
             </div>
 
             {/* <button onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} className={clicked?styles.octagon:'octagonClicked'}>Download Brochure</button> */}

@@ -1,4 +1,4 @@
-export interface UserDataType  {
+export type UserDataType =  {
     name: string,
     email: string,
     contact: string,

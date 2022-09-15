@@ -163,7 +163,7 @@ body{
   margin: 0 2rem;
 }
 .marginr5 {
-  margin: 0 30rem;
+  margin: 0 15vw;
 }
 .marginv1 {
   margin: 1rem 0rem;
@@ -197,15 +197,23 @@ a {
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 1600px) {
   html{
     font-size: 9px;
   }
+
+  .marginr5{
+    margin: 0 12vw;
+  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1320px) {
   html{
     font-size: 8px;
+  }
+
+  .marginr5{
+    margin: 0 10vw;
   }
 }
 
