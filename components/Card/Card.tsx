@@ -15,6 +15,8 @@ const Card = (props: InProps) => {
     let [showModelThumbnail, setShowModelThumbnail] = useState(true);
     let [startPlaying, setStartPlaying] = useState(false);
 
+    // const imgSource = variant== ? '' : '';
+
     const handleMouseDown = () => {
         setClicked(true);
     }
@@ -46,13 +48,13 @@ const Card = (props: InProps) => {
                     onClickPreview={handleClickPreview}
                     playing={startPlaying}
                 />
-                {showModelThumbnail && <span className={styles.modelThumbnail}> <img src='/images/hectorPlus.svg'></img> </span>} 
+                {showModelThumbnail && <span className={styles.modelThumbnail}> <img src='/images/hectorPlus.svg' /> </span>} 
             </div>
             <div onMouseLeave={handleMouseUp} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} className={styles.downloadButton + ' cursor-pointer'}>
-                <a href='/images/avatar.svg' download='avatar'>{clicked ? <img draggable={false} src='/images/downloadButtonOnclick.svg' /> : <img draggable={false} src='/images/downloadButtonDefault.svg' />}</a>
+                <a href='/images/avatar.svg' download='avatar'>
+                    {clicked ? <img draggable={false} src='/images/downloadButtonOnclick.svg' /> : <img draggable={false} src='/images/downloadButtonDefault.svg' />}
+                </a>
             </div>
-
-            {/* <button onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} className={clicked?styles.octagon:'octagonClicked'}>Download Brochure</button> */}
         </div>
     )
 }

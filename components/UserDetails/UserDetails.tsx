@@ -1,8 +1,8 @@
 import styles from "./index.module.css";
-import {UserDataType} from '../../constants/UserDataType'
+import {UserDataType} from '../../constants/DataTypes'
 
 interface InProps {
-  userData?:UserDataType
+  userData:UserDataType
 }
 
 const UserDetails = (props:InProps) => {
@@ -14,9 +14,9 @@ const UserDetails = (props:InProps) => {
         <span>CONTACT</span>
       </div>
       <div className={styles.userDetails}>
-        <span >{props.userData?.name}</span>
-        <span >{props.userData?.email}</span>
-        <span >{props.userData?.contact}</span>
+        <span >{props.userData.name}</span>
+        <span >{props.userData.email}</span>
+        <span >{props.userData.phone}</span>
       </div>
     </div>
   );

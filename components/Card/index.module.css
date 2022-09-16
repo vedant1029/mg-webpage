@@ -33,16 +33,20 @@
 
 .playerWrapper {
   position: relative;
+  margin: 1.7rem 0;
 }
 
 .reactPlayer {
-  margin: 1.6rem 0;
 }
 
 .modelThumbnail{
   position: absolute;
   right:0;
-  bottom:1.4rem;
+  bottom:0;
+}
+
+.modelThumbnail img{
+  display: block;
 }
 
 .playIcon{
@@ -69,38 +73,4 @@
   height: auto;
 }
 
-
-
-
-.octagon {
-  width: 24.3rem;
-  height: 4.4rem;
-  background: red;
-  position: relative;
-}
-.octagon:before {
-  content: "";
-  width: 198px;
-  height: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-bottom: 9px solid red;
-  border-left: 9px solid black;
-  border-right: 9px solid black;
-}
-.octagon:after {
-  content: "";
-  width: 198px;
-  height: 0;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  border-top: 9px solid red;
-  border-left: 9px solid black;
-  border-right: 9px solid black;
-}
-.octagonClicked{
-  background: black;
-}
 
