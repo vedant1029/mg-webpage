@@ -7,7 +7,8 @@ export type UserDataType =  {
 type config = {
     name:string,
     color:string,
-    variant:string
+    variant:string,
+    subvariant:string
 }
 
 export type ConfigDataType = Array<string>;

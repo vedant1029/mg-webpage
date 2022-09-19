@@ -5,9 +5,11 @@ import dynamic from "next/dynamic";
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 import {AiFillPlayCircle} from "react-icons/ai";
 
+import { ConfigDataType } from "../../constants/DataTypes";
+
 interface InProps {
-    index: Number;
-    videoSource: string;
+    index: Number,
+    configData: ConfigDataType;
 }
 
 const Card = (props: InProps) => {

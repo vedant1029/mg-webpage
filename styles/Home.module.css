@@ -8,10 +8,6 @@
   width: 100%;
   left: 0;
   padding: 2rem 0 5rem 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
   color: var(--white);
 }
 
@@ -43,4 +39,8 @@
     gap: 2rem;
     align-items: center;
   }
+/* 
+  .grid{
+    justify-content: center;
+  } */
 }

@@ -12,8 +12,9 @@ import useFetch from "../services/useFetch";
 
 const Home: NextPage = () => {
   const { query } = useRouter();
-  const apiUrl = "https://api.metadome.ai/mgAutodome/63233107580f90fa24dbafa8"+query.id;
-  let {userData,configData} = useFetch(apiUrl);
+  // const apiUrl = "https://api.metadome.ai/mgAutodome/50e35ab6-737e-4f28-84f5-3f6d94e44891"+query.id;
+  const apiUrl = "https://api.metadome.ai/mgAutodome/50e35ab6-737e-4f28-84f5-3f6d94e44891"
+  let { userData, configData } = useFetch(apiUrl);
 
   return (
     <div className={styles.container + "cover-whole-screen"}>
@@ -25,7 +26,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <Header />
-        <div className="marginr5">
+        <div className="marginr5" >
           <div className={styles.profile}>
             <Avatar imageSource={""} />
             {userData && <UserDetails userData={userData} />}
@@ -33,7 +34,8 @@ const Home: NextPage = () => {
           <p className={styles.title}>Your Configurations</p>
           <div className={styles.grid}>
             {configData.map((element, index) => {
-              return <Card key={index} videoSource={element} index={index + 1} /> })
+              return <Card key={index} configData={configData} index={index + 1} />
+            })
             }
           </div>
         </div>
