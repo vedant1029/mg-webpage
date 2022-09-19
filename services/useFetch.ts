@@ -3,7 +3,7 @@ import { UserDataType, ConfigDataType } from "../constants/DataTypes";
 
 export default function useFetch(url: string) {
   let [userData, setUserData] = useState<UserDataType | undefined>(undefined);
-  let [configData, setConfigData] = useState<ConfigDataType>([]);
+  let [configData, setConfigData] = useState<Array<ConfigDataType>>([]);
 
   useEffect(() => {
     const fetchData = async () => {

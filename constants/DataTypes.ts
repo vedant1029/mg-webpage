@@ -4,11 +4,9 @@ export type UserDataType =  {
     phone: string,
 };
 
-type config = {
+export type ConfigDataType = {
     name:string,
     color:string,
     variant:string,
     subvariant:string
 }
-
-export type ConfigDataType = Array<string>;

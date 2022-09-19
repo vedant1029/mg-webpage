@@ -34,7 +34,7 @@ const Home: NextPage = () => {
           <p className={styles.title}>Your Configurations</p>
           <div className={styles.grid}>
             {configData.map((element, index) => {
-              return <Card key={index} configData={configData} index={index + 1} />
+              return <Card key={index} configData={element} index={index + 1} />
             })
             }
           </div>
