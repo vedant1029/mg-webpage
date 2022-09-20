@@ -3,9 +3,10 @@ import { useState } from 'react';
 
 import dynamic from "next/dynamic";
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
-import {AiFillPlayCircle} from "react-icons/ai";
+import { AiFillPlayCircle } from "react-icons/ai";
 
 import { ConfigDataType } from "../../constants/DataTypes";
+import {imgSource} from "../../constants/imageMappings"
 
 interface InProps {
     index: Number,
@@ -17,7 +18,33 @@ const Card = (props: InProps) => {
     let [showModelThumbnail, setShowModelThumbnail] = useState(true);
     let [startPlaying, setStartPlaying] = useState(false);
 
-    // const imgSource = variant== ? '' : '';
+    function getLogo(variant:string){
+        switch (variant) {
+            case 'MG Astor':
+                return imgSource.astor;
+            case 'MG Gloster':
+                return imgSource.gloster;
+            case 'MG Hector':
+                return imgSource.hector;
+            case 'MG zsev':
+                return imgSource.zsev;  
+            case 'MG Hector Plus':
+                return imgSource.hectorPlus;
+            default:  
+          }
+    }
+    // const variant:string = props.configData.data.name;
+    const variant:string = 'MG Hector';
+    const variantLogo = getLogo(variant);
+    
+    const getLastEdited = (timestamp:number) => {
+        let timeDiff = new Date().getTime() - new Date(timestamp).getTime();
+        timeDiff = timeDiff/1000; //seconds
+        return Math.floor(timeDiff/3600);
+    }
+    const lastEditedTime = getLastEdited(props.configData.timestamp);
+
+    const videoUrl = 'https://assets.metadome.ai/MG-autodome/media/videos/' + props.configData.config + '.mp4';
 
     const handleMouseDown = () => {
         setClicked(true);
@@ -36,7 +63,7 @@ const Card = (props: InProps) => {
         <div className={styles.container}>
             <div className='space-between'>
                 <span className={styles.configTitle}>{'Car Configuration ' + props.index}</span>
-                <span className={styles.configStatus}>Edited 7 hours ago</span>
+                <span className={styles.configStatus}>{`Edited ${lastEditedTime} hours ago`}</span>
             </div>
             <div className={styles.playerWrapper}>
                 <ReactPlayer
@@ -50,7 +77,12 @@ const Card = (props: InProps) => {
                     onClickPreview={handleClickPreview}
                     playing={startPlaying}
                 />
-                {showModelThumbnail && <span className={styles.modelThumbnail}> <img src='/images/hectorPlus.svg' /> </span>} 
+                {showModelThumbnail &&
+                    (<span >
+                        <img className={styles.modelThumbnailBg} src='/images/variantBg.svg' /> 
+                        <img style={{bottom:(variant=='MG Hector')?'0':'0.9rem'}} className={styles.modelThumbnail} src={'/images/' + variantLogo} />
+                    </span>)
+                }
             </div>
             <div onMouseLeave={handleMouseUp} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} className={styles.downloadButton + ' cursor-pointer'}>
                 <a href='/images/avatar.svg' download='avatar'>

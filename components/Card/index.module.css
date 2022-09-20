@@ -39,14 +39,17 @@
 .reactPlayer {
 }
 
-.modelThumbnail{
+.modelThumbnailBg{
   position: absolute;
   right:0;
   bottom:0;
+  display: block;
 }
 
-.modelThumbnail img{
-  display: block;
+.modelThumbnail{
+  position: absolute;
+  right:1.6rem;
+  bottom:0.9rem;
 }
 
 .playIcon{
@@ -73,4 +76,12 @@
   height: auto;
 }
 
-
+@media (max-width: 600px){
+  .modelThumbnailBg{
+    width: 20rem;
+  }
+  
+  .modelThumbnail{
+    width: 14rem;
+  }
+}

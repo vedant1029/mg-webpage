@@ -7,7 +7,7 @@ export default function useFetch(url: string) {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
+      try {  
         const data = await fetch(url, {
           method: "GET",
           redirect: "follow",
